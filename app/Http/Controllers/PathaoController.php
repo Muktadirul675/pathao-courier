@@ -9,7 +9,8 @@ use Enan\PathaoCourier\Facades\PathaoCourier;
 class PathaoController extends Controller
 {
     public function create_order(Request $request){
-        PathaoCourier::CREATE_ORDER($request);
+        $res = PathaoCourier::CREATE_ORDER($request);
+        return response()->json($res, 200);
     }
 
     public function cities(Request $request){
